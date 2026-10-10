@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Базовые стили для демонстрации (чтобы карточка выглядела аккуратно) */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Основная карточка */
+.product-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    width: 300px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Плавность для :hover */
+}
+
+/* 4. Эффект наведения на карточку (Псевдокласс :hover) */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Бэдж "Новинка" */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff4757;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* 7. Декоративная ленточка под бэджем (Псевдоэлемент ::after) */
+.badge::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: #ff6b81;
+}
+
+/* Заголовок */
+.title {
+    font-size: 18px;
+    margin: 20px 0 10px 0;
+    color: #2f3542;
+}
+
+/* 1. Капитализация первой строки заголовка (Псевдоэлемент ::first-line) */
+.title::first-line {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+/* Цена */
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2f3542;
+    margin: 0 0 20px 0;
+}
+
+/* Список характеристик */
+.specs {
+    list-style: none;
+    /* Отключаем стандартные маркеры */
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.specs li {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #57606f;
+    display: flex;
+    align-items: center;
+}
+
+/* 2. Чередование строк: красим нечетные li (Псевдокласс :nth-child) */
+.specs li:nth-child(odd) {
+    background-color: #f1f2f6;
+    border-radius: 4px;
+}
+
+/* 3. Выделение последней характеристики (Псевдокласс :last-child) */
+.specs li:last-child {
+    font-weight: bold;
+    color: #2ed573;
+}
+
+/* 6. Кастомный маркер перед текстом (Псевдоэлемент ::before) */
+.specs li::before {
+    content: "⚡";
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+/* Кнопка "Купить" */
+.btn-buy {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* 5. Изменение цвета кнопки при наведении (Псевдокласс :hover) */
+.btn-buy:hover {
+    background-color: #3742fa;
+}
+
+/* 5. Уменьшение кнопки при клике (Псевдокласс :active) */
+.btn-buy:active {
+    transform: scale(0.97);
+}
